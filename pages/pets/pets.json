@@ -1,0 +1,33 @@
+[   {
+        'name': 'Katrine',
+        'pisture': '../../assets/images/pets-katrine'
+    },
+    {
+        'name': 'Jennifer',
+        'pisture': '../../assets/images/pets-jennifer'
+    },
+    {
+        'name': 'Woody',
+        'pisture': '../../assets/images/pets-woody'
+    },
+    {
+        'name': 'Sophia',
+        'pisture': '../../assets/images/pets-puppy'
+    },
+    {
+        'name': 'Timmy',
+        'pisture': '../../assets/images/pets-timmy'
+    },
+    {
+        'name': 'Charly',
+        'pisture': '../../assets/images/pets-charly'
+    },
+    {
+        'name': 'Scarlett',
+        'pisture': '../../assets/images/pets-scarlet'
+    },
+    {
+        'name': 'Freddie',
+        'pisture': '../../assets/images/pets-katrine(1)'
+    },
+]
