@@ -9,10 +9,16 @@ h1, h2, h3, h4, h5 {
     margin: 0;    
 }
 
+h1 {
+    font-size: 32px;
+    line-height: 107%;
+    letter-spacing: 0.06em;
+}
+
 h3 {
     font-size: 35px;
     color: #545454;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.05em;
 }
 
 
@@ -27,7 +33,7 @@ h5 {
     line-height: 110%;
 }
 
-p {
+p, a {
     font-family: 'Arial';
     font-style: normal;
     font-weight: 400;
@@ -46,22 +52,45 @@ li {
     list-style-type: none;
 }
 
-header {
-    display: flex;
-    height: 60px;
-    margin: 60px 40px 0;  
+button {
+    border-color: #F1CDB3;
+    border-style: solid;
+    width: 187px;
+    height: 52px;
+    background: #FAFAFA;
+    border-radius: 100px;
 }
 
-.logo h3 {
-    font-size: 32px;
-    line-height: 110%;
-    color: #F1CDB3;
+a.disabled {
+    pointer-events: none;
+    cursor: default;
 }
+
+a.active {
+    text-decoration: underline #F1CDB3 solid 3px;
+    text-underline-offset: 5px;
+}
+
+header {
+    display: flex;
+    margin: 30px auto;
+    height: 60px;
+    max-width: 1200px; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    display: grid;
+    grid-gap: 10px;
+}
+
+
 
 .logo p {
     font-size: 13px;
     letter-spacing: 0.1em;
-    color: #FFFFFF;
 }
 
 .menu {
@@ -70,9 +99,73 @@ header {
     grid-gap: 35px;
 }
 
+a {
+    color: #545454;
+    text-decoration: none;
+}
+
+.pets-container {
+    background: #F6F6F6;
+    padding: 80px 40px 100px;
+    display: grid;
+    grid-gap: 45px;
+    align-items: center;
+    justify-items: center;
+}
+
+.pets-container h3 {
+    width: 400px;
+    text-align: center;
+}
+
 .cards-container {
     width: 1200px;
     height: 930px;
+    box-sizing: border-box;
+    padding: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 30px 40px;
+}
+
+.pet-card {
+    width: 270px;
+    height: 435px;
+    display: grid;
+    justify-items: center;
+    background: #FAFAFA;
+}
+
+.look-btn {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: #292929;
+}
+
+.look-btn:hover {
+    background-color: #F1CDB3;
+}
+
+.button-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+}
+
+.button-container button {
+    width: 52px;
+}
+
+.button-container button.inactive {
+    border-color: #CDCDCD;
+}
+
+.page-num {
+    background: #F1CDB3;
 }
 
 footer {
