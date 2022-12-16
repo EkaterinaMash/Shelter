@@ -1,13 +1,16 @@
 @import url(../../assets/fonts/georgia/Georgia\ Regular\ font.ttf);
 
+
 body {
     display: grid;
 }
+
 
 header, main {
     grid-row-start: 1;
     grid-column-start: 1;
 }
+
 
 h1, h2, h3, h4, h5 {
     font-family: 'Georgia';
@@ -84,6 +87,12 @@ a.active {
     text-underline-offset: 5px;
 }
 
+main .container {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+
 button {
     width: 207px;
     height: 52px;
@@ -102,11 +111,31 @@ button:hover {
 }
 
 header {
+    /*
     display: flex;
+    width: 1200px;
     height: 60px;
-    margin: 60px 40px 0;  
+    margin: 60px auto 0; 
     z-index: 2;
     justify-content: space-between;
+    */
+    width: 100%;
+    z-index: 2;
+    height: 120px;
+}
+
+.container {
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    max-width: 1200px;
+    height: 60px;
+    margin: 60px auto 0; 
+    padding: 0 30px;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
@@ -114,17 +143,19 @@ header {
     grid-gap: 10px;
 }
 
-
-
 .logo p {
     font-size: 13px;
     letter-spacing: 0.1em;
     color: #FFFFFF;
 }
 
-.start-container {
+.burger-menu {
+    display: none;
+}
+
+.start.container {
     position: relative;
-    height: 908px;
+    padding: 0;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
@@ -132,13 +163,15 @@ header {
     max-width: 1200px;
     padding-top: 180px;
     margin: 0 auto 0;
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 42px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px;
+    justify-content: center;
 }
 
 .start-info {
     display: grid;
+    justify-content: center;
     grid-gap: 42px;
     width: 460px;
     height: 322px;
@@ -157,18 +190,15 @@ header {
 
 
 .menu {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 35px;
-    padding-top: 16px;
+    display: flex;
+    gap: 35px; 
 }
 
 .about-content {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 120px;
+    display: flex;
+    gap: 120px;
+    flex-wrap: wrap-reverse;
     justify-content: center;
-    margin: 80px 40px 100px;
 }
 
 .about-content img {
@@ -180,12 +210,7 @@ header {
     display: grid;
     grid-gap: 25px;
     width: 430px;
-    height: 380px;
     padding: 14px 0 14px;
-}
-
-.about-info h3 {
-    width: 370px;
 }
 
 .make-friend, .know-rest-btn {
@@ -207,7 +232,7 @@ header {
     background-color: #FDDCC4;
 }
 
-.pets-container {
+.pets.container {
     background: #F6F6F6;
 }
 
@@ -216,8 +241,6 @@ header {
     grid-gap: 60px;
     justify-items: center;
     align-items: center;
-    padding-top: 80px;
-    padding-bottom: 100px;
 }
 
 .pets-content h3 {
@@ -228,8 +251,7 @@ header {
     display: grid;
     grid-auto-flow: column;
     align-items: center;
-    grid-gap: 53px;
-    justify-content: center;
+    gap: 53px;
 }
 
 .left-button, .rigth-button {
@@ -239,11 +261,9 @@ header {
     border-radius: 100px;
 }
 
-.pet-card-container {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 90px;
-    justify-content: center;
+.pet-cards {
+    display: flex;
+    gap: 90px;
 }
 
 .pet-card {
@@ -274,7 +294,6 @@ header {
     display: grid;
     justify-items: center;
     grid-gap: 60px;
-    margin: 80px 0 100px;
 }
 
 .help-content h3 {
@@ -283,12 +302,12 @@ header {
 }
 
 .help-list {
-    width: 1026px;
-    height: 281px;
+    width: 85%;
     display: flex;
     flex-wrap: wrap;
     gap: 55px 119px;
     justify-content: center;
+    max-width: 1200px;
 }
 
 .help-item {
@@ -302,24 +321,21 @@ header {
     white-space: pre;
 }
 
-.donation-container {
-    height: 462px;
-    padding: 80px 0 100px;
+.donation.container {
     box-sizing: border-box;
     background: #F6F6F6;
 }
 
 .donation-content {
-    height: 282px;
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 30px;
+    display: flex;
+    gap: 30px;
     justify-content: center;
+    flex-wrap: wrap-reverse;
 }
 
 .donation-dog {
     width: 505px;
-    height: 261px;
+    height: auto;
     padding: 11px 0 10px;
 }
 
@@ -333,6 +349,7 @@ header {
 .donation-info p {
     font-size: 12px;
     color: #B2B2B2;
+    line-height: 150%;
 }
 
 .bank-card {
@@ -354,16 +371,15 @@ header {
 }
 
 footer {
-    height: 350px;
     padding-top: 40px;
     box-sizing: border-box;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer-content {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 160px;
+    display: flex;
+    gap: 160px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -371,8 +387,8 @@ footer {
 .footer-contacts, .footer-location {
     margin: 16px 0 60px;
     display: grid;
-    grid-gap: 40px;
     height: 234px;
+    align-content: space-between;
 }
 
 .footer-contacts {
@@ -390,7 +406,7 @@ footer {
 
 .footer-dog {
     width: 300px;
-    height: 310px;
+    height: auto;
 }
 
 .contacts, .address {
@@ -400,4 +416,244 @@ footer {
     align-items: center;
     grid-gap: 20px;
     color: #F1CDB3;
+}
+
+@media (max-width: 1230px) {
+
+    .start-content {
+        gap: 100px;
+        padding-top: 150px;
+    }
+
+    .start-info {
+        padding-top: 0;
+    }
+
+    .make-friend {
+        justify-self: center;
+    }
+
+    .slider {
+        gap: 12px;
+    }
+
+    .pet-cards {
+        gap: 40px;
+    }
+
+    .footer-content {
+        gap: 60px;
+    }
+}
+
+@media (max-width: 1100px) {
+
+    .header-content {
+        margin-top: 30px;
+    }
+
+    .start-dog {
+        width: 569px;
+        height: 593px;
+        margin-left: 15%;
+    }
+
+    .about-content {
+        gap: 80px;
+    }
+
+    .about-info {
+        padding: 0;
+    }
+
+    #pet3 {
+        display: none;
+    }
+
+    .help-list {
+        gap: 55px 60px;
+    }
+
+    .help-item {
+        width: 170px;
+    }
+
+    .donation-content {
+        gap: 60px;
+    }
+
+    .footer {
+        padding-top: 30px;
+    }
+
+    .footer-contacts, .footer-location {
+        margin: 0;
+    }
+}
+
+@media (max-width: 740px) {
+
+    main .container {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .header-content {
+        padding: 0 53px 0 10px;
+    }
+
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 22px;
+    }
+
+    .burger-menu span {
+        width: 30px;
+        height: 2px;
+        background-color: #F1CDB3;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    #pet2 {
+        display: none;
+    }
+
+    .about-content {
+        gap: 42px;
+    }
+
+    .about-content img {
+        width: 260px;
+        height: 354px;
+    }
+
+    .bank-card {
+        width: 281px;
+    }
+
+    .bank-card h4 {
+        font-size: 15px;
+    }
+
+    .slider {
+        grid-auto-flow: row;
+    }
+
+    .left-button, .rigth-button {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        margin-left: 43px;
+        margin-right: 43px;
+    }
+
+    .rigth-button {
+        justify-self: end;
+    }
+
+}
+
+@media (max-width: 640px) {
+   
+    h2, h3, h5 {
+        text-align: center;
+    }
+
+    h2, h3 {
+        font-size: 25px;
+    }
+
+    h5 {
+        line-height: 160%;
+        letter-spacing: normal;
+    }
+
+    .start-content {
+        gap: 105px;
+    }
+
+    .start-dog {
+        width: 260px;
+        height: 271px;
+    }
+
+    .start-info {
+        width: 300px;
+        height: 296px;
+    }
+
+    .start-info p {
+        text-align: center;
+    }
+
+    .about-info {
+        width: 270px;
+    }
+
+    .help-content {
+        grid-gap: 42px;
+    }
+
+    .help-list {
+        gap: 30px;
+        width: 91%;
+    }
+
+    .help-item {
+        width: 130px;
+        grid-gap: 20px;
+    }
+
+    .help-icon {
+        height: 50px;
+        width: auto;
+    }
+
+    .caption {
+        font-size: 15px;
+        line-height: 110%;
+    }
+
+    .pets-content {
+        gap: 42px;
+    }
+
+    .donation-dog {
+        width: 260px;
+        padding: 0;
+    }
+
+    .donation-info {
+        justify-items: center;
+        width: 300px;
+    }
+
+    .footer-content {
+        gap: 40px;
+    }
+
+    .footer-contacts, .footer-location {
+        justify-items: center;
+        height: 215px;
+    }
+
+    .footer-dog {
+        width: 260px;
+    } 
+}
+
+@media (max-width: 380px) {
+
+    .help-list {
+        justify-content: flex-start;
+    }
+
+    .donation-content {
+        gap: 42px;
+    }
 }
