@@ -80,13 +80,15 @@ header {
     align-items: center;
 }
 
+.burger-menu {
+    display: none;
+}
+
 .logo {
     text-align: center;
     display: grid;
     grid-gap: 10px;
 }
-
-
 
 .logo p {
     font-size: 13px;
@@ -119,13 +121,13 @@ a {
 }
 
 .cards-container {
-    width: 1200px;
-    height: 930px;
+    max-width: 1200px;
     box-sizing: border-box;
     padding: 15px 0;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 30px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    justify-content: center;
 }
 
 .pet-card {
@@ -169,16 +171,15 @@ a {
 }
 
 footer {
-    height: 350px;
     padding-top: 40px;
     box-sizing: border-box;
     background: radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%), #211F20;
 }
 
 .footer-content {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 160px;
+    display: flex;
+    gap: 160px;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
@@ -186,7 +187,7 @@ footer {
 .footer-contacts, .footer-location {
     margin: 16px 0 60px;
     display: grid;
-    grid-gap: 40px;
+    align-content: space-between;
     height: 234px;
 }
 
@@ -200,7 +201,6 @@ footer {
 
 .footer-location {
     width: 302px;
-    grid-gap: 34px;
 }
 
 .footer-dog {
@@ -215,4 +215,52 @@ footer {
     align-items: center;
     grid-gap: 20px;
     color: #F1CDB3;
+}
+
+@media (max-width: 1100px) {
+    .footer {
+        padding-top: 30px;
+    }
+
+    .footer-contacts, .footer-location {
+        margin: 0;
+    }
+}
+
+@media (max-width: 720px) {
+
+    header {
+        margin: 30px 50px 30px 10px;
+    }
+
+    .burger-menu {
+        display: flex;
+        width: 30px;
+        height: 22px;
+        flex-wrap: wrap;
+        align-content: space-between;
+    }
+
+    .burger-menu span {
+        height: 2px;
+        width: 30px;
+        background-color: #000;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .footer-content {
+        gap: 40px;
+    }
+
+    .footer-contacts, .footer-location {
+        justify-items: center;
+        height: 215px;
+    }
+
+    .footer-dog {
+        width: 260px;
+    } 
 }
