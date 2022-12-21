@@ -6,7 +6,7 @@ fetch('https://raw.githubusercontent.com/EkaterinaMash/Shelter/gh-pages/pages/pe
 .then( data => {
     pets = data;   
     addPetCard(); 
-    workWithMenuPopup()   
+    workWithMenuPopup();  
 })
 
 function addPetCard() {
@@ -70,6 +70,10 @@ function workWithMenuPopup() {
         menu.classList.toggle('show');
         body.classList.toggle('noscroll');
     }
+}
+
+function addInfoToPetPopup() {
+
 }
 
 
