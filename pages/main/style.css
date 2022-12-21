@@ -194,7 +194,7 @@ header {
 
 .popup.active {
     animation-name: slidein;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-fill-mode: forwards;
     display: flex;
     flex-direction: column;
@@ -206,7 +206,7 @@ header {
     height: 100%;
     background-color: #292929;
     z-index: 2;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .popup-logo {
@@ -225,7 +225,7 @@ header {
     animation-name: rotate;
     animation-duration: 3s;
     animation-fill-mode: forwards;
-    animation-delay: 5s;
+    animation-delay: 3s;
 } 
 
 .start.container {
