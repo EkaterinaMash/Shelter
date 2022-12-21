@@ -5,7 +5,8 @@ fetch('https://raw.githubusercontent.com/EkaterinaMash/Shelter/gh-pages/pages/pe
 })
 .then( data => {
     pets = data;   
-    addPetCard();    
+    addPetCard(); 
+    workWithMenuPopup()   
 })
 
 function addPetCard() {
@@ -28,6 +29,46 @@ function addPetCard() {
         petCard.appendChild(caption);
         petCard.appendChild(learnMoreBtn);
         cardsContainer.appendChild(petCard);
+    }
+}
+
+function workWithMenuPopup() {
+    let menuPopup = document.querySelector('.popup-menu');
+    let menuPopupBlocker = document.querySelector('.popup-blocker-menu');
+    let popupLogo = document.querySelector('.popup-logo');
+    let burgerMenu = document.querySelector('.burger-menu');
+    let logo = document.querySelector('.logo').cloneNode(1);
+    let menu = document.querySelector('.menu').cloneNode(1);
+    let popupBurger = burgerMenu.cloneNode(1);
+    let menuLinks = Array.from(menu.children);
+    let body = document.querySelector('body');
+
+    burgerMenu.onclick = openPopup;
+    menuPopupBlocker.onclick = closePopup;
+    popupBurger.onclick = closePopup;
+
+    function openPopup(e) {
+        e.preventDefault();
+        toggleMenuClasses();
+        popupLogo.appendChild(logo);
+        popupLogo.appendChild(popupBurger);
+        menuPopup.appendChild(menu);
+    }
+
+    function closePopup(e) {
+        e.preventDefault();
+        toggleMenuClasses();
+    }
+
+    menuLinks.forEach(menuLink => {
+        menuLink.onclick = toggleMenuClasses;
+    });
+
+    function toggleMenuClasses () {
+        menuPopup.classList.toggle('active');
+        menuPopupBlocker.classList.toggle('active');
+        menu.classList.toggle('show');
+        body.classList.toggle('noscroll');
     }
 }
 

@@ -5,6 +5,9 @@ body {
     display: grid;
 }
 
+body.noscroll {
+    overflow: hidden;
+}
 
 header, main {
     grid-row-start: 1;
@@ -85,6 +88,7 @@ a.disabled {
 a.active {
     text-decoration: underline solid #F1CDB3 3px;
     text-underline-offset: 5px;
+    color: #FAFAFA;
 }
 
 main .container {
@@ -152,6 +156,77 @@ header {
 .burger-menu {
     display: none;
 }
+
+.popup {
+    display: none;
+}
+
+.popup-blocker {
+    display: none;
+}
+
+.popup-blocker.active {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes slidein {
+    from {left: -320px;}
+    to {left: 0;}
+}
+
+@keyframes slideout {
+    from {left: 0;}
+    to {left: -320px;}
+}
+
+.popup {
+    animation-name: slideout;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+.popup.active {
+    animation-name: slidein;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    display: flex;
+    flex-direction: column;
+    gap: 158px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+    background-color: #292929;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.popup-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 53px 0 10px;
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(90deg);}
+}
+
+.nav-menu.animate {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+} 
 
 .start.container {
     position: relative;
@@ -518,6 +593,16 @@ footer {
 
     .menu {
         display: none;
+    }
+
+    .menu.show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu.show li a {
+        font-size: 32px;
     }
 
     #pet2 {
