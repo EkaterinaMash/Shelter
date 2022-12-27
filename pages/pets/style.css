@@ -107,8 +107,6 @@ header {
     display: none;
 }
 
-
-
 .menu {
     display: grid;
     grid-auto-flow: column;
@@ -142,6 +140,64 @@ a {
     flex-wrap: wrap;
     gap: 30px 40px;
     justify-content: center;
+}
+.card-popup-blocker {
+    display: none;
+}
+
+.card-popup-blocker.active {
+    display: block;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-popup {
+    display: none;
+}
+
+.card-popup.active {
+    display: block;
+    position: fixed;
+    --popup-width: 900px;
+    --popup-height: 500px;
+    width: var(--popup-width);
+    height: var(--popup-height);
+    background: #FAFAFA;
+    border-radius: 9px;
+    z-index: 2;
+    top: calc(50% - var(--popup-height)/2);
+    left: calc(50% - var(--popup-width)/2);
+}
+
+.card-popup-content {
+    display: flex;
+    gap: 29px;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.pet-popup-close {
+    position: absolute;
+    border-radius: 100px;
+    width: 52px;
+    height: 52px;
+    right: -52px;
+    top: -52px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.pet-popup-close:hover {
+    background-color: #F1CDB3;
+    cursor: pointer;
+}
+
+.popup-pet-caption {
+    max-width: 351px;
 }
 
 .pet-card {
