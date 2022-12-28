@@ -125,6 +125,7 @@ function generateCards() {
     let petImgs = document.querySelectorAll('.pet-img');
     let petCaptions = document.querySelectorAll('.caption');
     let petCards = document.querySelectorAll('.pet-card');
+    let petCardsContainer = document.querySelector('.pet-cards');
     let randomCards = new Set();
     let width = document.documentElement.clientWidth;
     
@@ -152,6 +153,7 @@ function generateCards() {
                 randomCards.delete(pet);
             }   
         };
+        petCardsContainer.animate([{opacity: 0.2}, {opacity: 1}], 3000);   
         fillCards();
     }
 
