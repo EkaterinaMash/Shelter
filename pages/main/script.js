@@ -7,9 +7,9 @@ fetch('https://raw.githubusercontent.com/EkaterinaMash/Shelter/gh-pages/pages/pe
 })
 .then( data => {
     pets = data;   
-    addPetCard(); 
     OpenCloseBurgerMenu();
     openPetPopup(); 
+    generateCards();
 })
 
 function OpenCloseBurgerMenu() {
@@ -50,6 +50,7 @@ function toggleMenuClasses() {
 }
 }
 
+/*
 function addPetCard() {
     for (let i=0; i<3; i++) {
         let petCards = document.querySelector('.pet-cards');
@@ -59,12 +60,14 @@ function addPetCard() {
         let learnMoreBtn = document.createElement('button');
 
         petCard.classList.add('pet-card');
+        petImg.classList.add('pet-img');
         caption.classList.add('caption');
         learnMoreBtn.classList.add('look-btn');
 
+        
         petImg.setAttribute('src', pets[i].picture);
         petCard.setAttribute('id', pets[i].id)
-        caption.textContent = pets[i].name;
+        caption.textContent = pets[i].name; 
         learnMoreBtn.textContent = 'Learn more';
 
         petCard.appendChild(petImg);
@@ -72,7 +75,7 @@ function addPetCard() {
         petCard.appendChild(learnMoreBtn);
         petCards.appendChild(petCard);
     }
-}
+} */
 
 function openPetPopup() {
     let petCards = document.querySelectorAll('.pet-card');
@@ -115,4 +118,58 @@ function openPetPopup() {
         body.classList.toggle('noscroll');
     }
 }
+
+function generateCards() {
+    let petIndex;
+    let n;
+    let petImgs = document.querySelectorAll('.pet-img');
+    let petCaptions = document.querySelectorAll('.caption');
+    let petCards = document.querySelectorAll('.pet-card');
+    let randomCards = new Set();
+    let width = document.documentElement.clientWidth;
+    
+    if (width > 1279) {
+        n=3
+    } else if (width > 768) {
+        n=2
+    } else {n=1};
+   
+    function generateOnStartPage() {
+        while (randomCards.size < n) {
+            petIndex = Math.floor(Math.random()*pets.length);
+            randomCards.add(pets[petIndex]);
+        }
+        fillCards();
+    }
+       
+    function generateOnNeighbourPage() {
+        while (randomCards.size < 2*n) {
+            petIndex = Math.floor(Math.random()*pets.length);
+            randomCards.add(pets[petIndex]);
+        };
+        for (let pet of randomCards) {
+            if (randomCards.size > n) {
+                randomCards.delete(pet);
+            }   
+        };
+        fillCards();
+    }
+
+    document.querySelector('.rigth-button').onclick = generateOnNeighbourPage;
+    document.querySelector('.left-button').onclick = generateOnNeighbourPage; 
+    
+    function fillCards() {
+        let cardsOnPage = Array.from(randomCards);
+        for (let i=0; i<n; i++) {
+            petImgs[i].setAttribute('src', cardsOnPage[i].picture);
+            petCards[i].setAttribute('id', cardsOnPage[i].id);
+            petCaptions[i].textContent = cardsOnPage[i].name;
+            petCards[i].classList.add('show');
+        }
+    }
+    generateOnStartPage();
+}
+
+
+
 

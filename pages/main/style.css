@@ -342,6 +342,10 @@ header {
 }
 
 .pet-card {
+    display: none;
+}
+
+.pet-card.show {
     display: grid;
     justify-items: center;
     width: 270px;
@@ -600,9 +604,10 @@ footer {
         padding: 0;
     }
 
+    /*
     #pet03 {
         display: none;
-    }
+    } */
 
     .help-list {
         gap: 55px 60px;
@@ -664,9 +669,10 @@ footer {
         font-size: 32px;
     }
 
+    /*
     #pet02 {
         display: none;
-    }
+    } */
 
     .about-content {
         gap: 42px;
