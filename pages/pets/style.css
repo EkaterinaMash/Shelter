@@ -201,6 +201,10 @@ a {
 }
 
 .pet-card {
+    display: none;
+}
+
+.pet-card.show {
     width: 270px;
     height: 435px;
     display: grid;
@@ -230,10 +234,18 @@ a {
 
 .button-container button {
     width: 52px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #292929;
 }
 
-.button-container button.inactive {
+.button-container button:disabled {
     border-color: #CDCDCD;
+    color: #CDCDCD;
 }
 
 .page-num {
@@ -300,8 +312,8 @@ footer {
 @media (max-width: 720px) {
 
     @keyframes slidein {
-        from {left: -320px;}
-        to {left: 0;}
+        from {transform: translate(-320px);}
+        to {transform: translate(0);}
     }
 
     @keyframes rotate {

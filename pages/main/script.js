@@ -38,7 +38,21 @@ function openPopup(e) {
 
 function closePopup(e) {
     e.preventDefault();
-    toggleMenuClasses();
+    navMenu.animate([
+        {transform: 'rotate(90deg)'}, 
+        {transform: 'rotate(0)'}
+    ], {
+        duration: 2000,
+        fill: 'forwards'
+    })
+    popup.animate([
+        { transform: 'translate(0)'}, 
+        {transform: 'translate(-320px)'}
+    ], {
+        duration: 3000,
+        delay: 2000
+    });
+    setTimeout(toggleMenuClasses, 5000) ;  
 }
 
 function toggleMenuClasses() {
