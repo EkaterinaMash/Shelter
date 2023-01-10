@@ -44,7 +44,7 @@ function workWithMenuPopup() {
         menuPopup.appendChild(menu);
 
         menuPopup.animate([
-            {transform: 'translate(-320px)'},
+            {transform: 'translate(320px)'},
             {transform: 'translate(0)'}
         ], longAnimationDuration);
         popupBurger.animate([
@@ -68,7 +68,7 @@ function workWithMenuPopup() {
         })
         menuPopup.animate([
             {transform: 'translate(0)'},
-            {transform: 'translate(-320px)'}
+            {transform: 'translate(320px)'}
         ], {
             duration: longAnimationDuration,
             delay: shortAnimationDuration,   

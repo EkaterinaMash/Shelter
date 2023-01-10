@@ -1,0 +1,34 @@
+.pet-card {
+    display: none;
+}
+
+.pet-card.show {
+    display: grid;
+    justify-items: center;
+    width: 270px;
+    height: 435px;
+    background: #FAFAFA;
+    border-radius: 9px;
+}
+
+.pet-card p {
+    font-size: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+.pet-card:hover {
+    cursor: pointer;
+}
+
+.caption {
+    text-align: center;
+    white-space: pre;
+}
+
+@media (max-width: 640px) {
+    .caption {
+        font-size: 15px;
+        line-height: 110%;
+    }
+}

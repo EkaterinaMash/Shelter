@@ -1,0 +1,79 @@
+button, .link {
+    width: 207px;
+    height: 52px;
+    border-radius: 100px;
+    background-color: #F1CDB3;
+    border: 2px solid #F1CDB3;
+    font-family: 'Georgia';
+    font-style: normal;
+    letter-spacing: 00.06em;
+    text-align: center;
+    font-size: 17px;
+    line-height: 130%;
+    color: #292929;
+}
+
+.link {
+    line-height: 52px;
+}
+
+.pets-content .link {
+    width: 261px;
+}
+
+button:hover, .link:hover {
+    background-color: #FDDCC4;
+    cursor: pointer;
+}
+
+.left-button, .right-button {
+    width: 52px;
+    height: 52px;
+    background: rgba(0, 0, 0, 0);
+    border-radius: 100px;
+}
+
+.look-btn {
+    width: 187px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.button-container button {
+    width: 52px;
+    font-size: 20px;
+    line-height: 115%;
+    background: rgba(0, 0, 0, 0);
+}
+
+.button-container button:disabled {
+    border-color: #CDCDCD;
+    color: #CDCDCD;
+}
+
+.button-container button:hover {
+    background-color: #FDDCC4;
+}
+
+.button-container .page-num {
+    background: #F1CDB3;
+}
+
+@media (max-width: 1230px) {
+    .start-info .link {
+        justify-self: center;
+    }
+}
+
+@media (max-width: 740px) {
+
+    .left-button, .right-button {
+        grid-row-start: 2;
+        grid-column-start: 1;
+        margin-left: 43px;
+        margin-right: 43px;
+    }
+
+    .right-button {
+        justify-self: end;
+    }
+}

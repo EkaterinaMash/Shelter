@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link rel="stylesheet" href="../normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../common-elements.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../buttons.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menu-popup.css">
+    <link rel="stylesheet" href="../card-popup.css">
+    <link rel="stylesheet" href="../pet-card.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="start-section.css">
+    <link rel="stylesheet" href="about-section.css">
+    <link rel="stylesheet" href="pets-section.css">
+    <link rel="stylesheet" href="help-section.css">
+    <link rel="stylesheet" href="donation-section.css">
 </head>
 <body>
 <header>
@@ -16,6 +28,9 @@
             <p>Shelter for pets in Boston</p>
         </a>
         <div class="nav-menu">
+            <div class="burger-menu">
+                <span></span><span></span><span></span>
+            </div>
             <ul class="menu">
                 <li>
                     <a href="" class="disabled active">About the shelter</a>
@@ -29,10 +44,7 @@
                 <li>
                     <a href="#contacts">Contacts</a>
                 </li>
-            </ul>
-            <div class="burger-menu">
-                <span></span><span></span><span></span>
-            </div>
+            </ul>   
         </div>
     </div>
     <div class="popup-blocker-menu">
@@ -48,7 +60,7 @@
                 <h2>Not only people<br> need a house</h2>
                 <p>We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she
                     will love you more than anybody else in the world, you will see!</p>
-                <a href="#pets-info" class="make-friend">Make a friend</a>
+                <a href="#pets-info" class="link">Make a friend</a>
             </div>
             <img src="../../assets/images/start-screen-puppy.png" alt="Dog" class="start-dog">
         </div>
@@ -103,18 +115,15 @@
                                     <h5 class="popup-description"></h5>
                                     <ul class="popup-list"></ul>
                                 </div>
-
                             </div>
-
-                        </div>
-                        <button class="pet-popup-close"><img src="../../assets/icons/cross.png" alt=""></button>
+                            <button class="pet-popup-close"><img src="../../assets/icons/cross.png" alt=""></button>
+                        </div>                      
                     </div>
                 </div>
                 <button type="button" class="right-button"><img src="../../assets/icons/Arrow (2).png"
                                                                 alt="right-button"></button>
-
             </div>
-            <a href="../pets/index.html" class="know-rest-btn">Get to know the rest</a>
+            <a href="../pets/index.html" class="link">Get to know the rest</a>
         </div>
     </section>
     <section class="help container">
@@ -167,7 +176,7 @@
             <div class="donation-info">
                 <h3>You can also<br> make a donation</h3>
                 <h5>Name of the bank / Type of bank account</h5>
-                <a href="" class="bank-card">
+                <a href="" class="bank-card link">
                     <img src="../../assets/icons/credit-card.png" alt="Credit card">
                     <h4>8380 2880 8791 7435</h4>
                 </a>

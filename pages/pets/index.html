@@ -6,32 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets</title>
     <link rel="stylesheet" href="../normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../common-elements.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="header-pets.css">
+    <link rel="stylesheet" href="../buttons.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../menu-popup.css">
+    <link rel="stylesheet" href="../card-popup.css">
+    <link rel="stylesheet" href="../pet-card.css">
+    <link rel="stylesheet" href="pets.css">
 </head>
 <body>
 <header>
-    <a class="logo" href="../main/index.html">
-        <h1>Cozy House</h1>
-        <p>Shelter for pets in Boston</p>
-    </a>
-    <div class="nav-menu">
-        <div class="burger-menu">
-            <span></span><span></span><span></span>
+    <div class="header-content">
+        <a class="logo" href="../main/index.html">
+            <h1>Cozy House</h1>
+            <p>Shelter for pets in Boston</p>
+        </a>
+        <div class="nav-menu">
+            <div class="burger-menu">
+                <span></span><span></span><span></span>
+            </div>
+            <ul class="menu">
+                <li>
+                    <a href="../main/index.html">About the shelter</a>
+                </li>
+                <li>
+                    <a href="" class="disabled active">Our pets</a>
+                </li>
+                <li>
+                    <a href="../main/index.html#help-info">Help the shelter</a>
+                </li>
+                <li>
+                    <a href="#contacts">Contacts</a>
+                </li>
+            </ul>
         </div>
-        <ul class="menu">
-            <li>
-                <a href="../main/index.html">About the shelter</a>
-            </li>
-            <li>
-                <a href="" class="disabled active">Our pets</a>
-            </li>
-            <li>
-                <a href="../main/index.html#help-info">Help the shelter</a>
-            </li>
-            <li>
-                <a href="#contacts">Contacts</a>
-            </li>
-        </ul>
     </div>
     <div class="popup-blocker-menu"></div>
     <div class="popup-menu">
@@ -105,7 +115,6 @@
             <button type="button" class="right-arr-two">&gt;&gt;</button>
         </div>
     </section>
-
 </main>
 <footer>
     <a name="contacts"></a>

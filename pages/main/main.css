@@ -1,0 +1,63 @@
+
+body {
+    display: grid;
+}
+
+header, main {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+h2 {
+    font-size: 44px;
+    color: white;
+    width: 310px;
+    letter-spacing: normal;
+}
+
+a {
+    color: #CDCDCD;
+    text-decoration: none;
+}
+
+a.active {
+    color: #FAFAFA;
+}
+
+main .container {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.container {
+    width: 100%;
+}
+
+.logo p {
+    color: #FFFFFF;
+}
+
+@media (max-width: 740px) {
+
+    main .container {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+}
+
+@media (max-width: 640px) {
+
+    h2, h3, h5 {
+        text-align: center;
+    }
+
+    h2, h3 {
+        font-size: 25px;
+    }
+
+    h5 {
+        line-height: 160%;
+        letter-spacing: normal;
+    }
+}
+

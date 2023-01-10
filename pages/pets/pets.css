@@ -1,0 +1,58 @@
+
+a.active {
+    color: #292929;
+}
+
+.logo {
+    text-align: center;
+    display: grid;
+    grid-gap: 10px;
+}
+
+.logo p {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+
+a {
+    color: #545454;
+    text-decoration: none;
+}
+
+.pets-container {
+    background: #F6F6F6;
+    padding: 80px 40px 100px;
+    display: grid;
+    grid-gap: 45px;
+    align-items: center;
+    justify-items: center;
+}
+
+.pets-container h3 {
+    width: 400px;
+    text-align: center;
+}
+
+.pet-cards-container {
+    max-width: 1200px;
+    box-sizing: border-box;
+    padding: 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 40px;
+    justify-content: center;
+}
+
+
+.button-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+}
+
+
+@media (max-width: 720px) {
+.burger-menu span {
+    background-color: #000000;
+}
+}
