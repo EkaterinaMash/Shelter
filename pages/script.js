@@ -71,7 +71,7 @@ function workWithMenuPopup() {
             {transform: 'translate(320px)'}
         ], {
             duration: longAnimationDuration,
-            delay: shortAnimationDuration,   
+            delay: shortAnimationDuration,  
         });
         setTimeout(toggleMenuClasses, (longAnimationDuration + shortAnimationDuration));
     }
@@ -89,14 +89,16 @@ function workWithMenuPopup() {
 }
 
 function openPetPopup() {
-   
+
+    let listItemsAmount = 4; 
     let cardPopup = document.querySelector('.card-popup');
     let cardPopupBlocker = document.querySelector('.card-popup-blocker');
     let popupPetImg = document.querySelector('.popup-pet-img');
     let popupName = document.querySelector('.popup-name');
     let popupBreed = document.querySelector('.popup-breed');
     let popupDescription = document.querySelector('.popup-description');
-    // let popupList = document.querySelector('.popup-list');
+    let popupList = document.querySelector('.popup-list');
+    let popupListItems = document.querySelectorAll('.popup-list-item');
     let popupCloseBtn = document.querySelector('.pet-popup-close');
 
     for (let i = 0; i < petCards.length; i++) {
@@ -105,11 +107,14 @@ function openPetPopup() {
             let petId = petCards[i].id;
             for (let j = 0; j < pets.length; j++) {
                 if (pets[j].id === petId) {
-                    console.log(pets[j]);
                     popupPetImg.setAttribute('src', pets[j].picture);
                     popupName.textContent = pets[j].name;
                     popupBreed.textContent = pets[j].breed;
                     popupDescription.textContent = pets[j].description;
+                    popupListItems[0].textContent += pets[j].age;
+                    popupListItems[1].textContent += pets[j].inoculations;
+                    popupListItems[2].textContent += pets[j].diseases;
+                    popupListItems[3].textContent += pets[j].parasites;
                 }
             }
         }

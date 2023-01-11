@@ -56,3 +56,12 @@ a {
     background-color: #000000;
 }
 }
+
+@media (max-width: 520px) {
+    .pets-container h3 {
+        font-size: 25px;
+    }
+    .button-container {
+        grid-gap: 10px;
+    }
+}

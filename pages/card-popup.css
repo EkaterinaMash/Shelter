@@ -55,4 +55,65 @@
 
 .popup-pet-caption {
     max-width: 351px;
+    box-sizing: border-box;
+    padding: 50px 20px 88px 29px;
+}
+
+.popup-pet-caption .popup-name {
+    margin-bottom: 10px;
+    text-align: start;
+}
+
+.popup-breed, .popup-description {
+    margin-bottom: 40px;
+}
+
+.popup-list-item::before {
+    content: "•";
+    color: #F1CDB3;
+    margin-right: 10px;
+} 
+
+.popup-list-item span {
+    font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+    .card-popup.active {
+        --popup-width: 630px;
+        --popup-height: 350px;
+    }
+
+    .popup-pet-caption {
+        max-width: 260px;
+        padding: 10px 9px 37px 11px;
+    }
+
+    .popup-description {
+        font-size: 13px;
+    }
+
+    .popup-breed, .popup-description {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 750px) {
+    .card-popup.active {
+        --popup-width: 240px;
+        --popup-height: 341px;
+    }
+
+    .popup-pet-caption {
+        width: 240px;
+        padding: 10px;
+    }
+
+    .popup-pet-caption .popup-name {
+        text-align: center;
+    }
+
+    .popup-pet-img {
+        display: none;
+    }
 }
