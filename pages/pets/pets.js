@@ -7,6 +7,8 @@ fetch('https://raw.githubusercontent.com/EkaterinaMash/Shelter/gh-pages/pages/pe
         generateCards();
     })
 
+window.addEventListener('resize', changeCardsAmount);
+
 function shuffleArr() {
     let randomEl;
 
@@ -45,7 +47,9 @@ function generateCards() {
     let lastSlideArr = document.querySelector('.right-arr-two');
     let firstSlideArr = document.querySelector('.left-arr-two');
     let pageNumBtn = document.querySelector('.page-num');
-    
+    let width = document.documentElement.clientWidth;
+    let petShow = document.querySelectorAll('.pet-card.show');
+
     if (width >= desktopWidth) {
         cardsAmount = 8;
     } else if (width >= tabletWidth) {
@@ -53,6 +57,8 @@ function generateCards() {
     } else {
         cardsAmount = 3;
     }
+
+    reduceCards(petShow, cardsAmount);
 
     for (let i = 0; i < cardsArrLength / cardsAmount; i++) {
         generateCardsArr(cardsOnSlide, cardsArr, cardsAmount);
@@ -77,7 +83,7 @@ function generateCards() {
         lastSlideArr.disabled = false;
 
         let j = 0;
-        
+
         petCardsContainer.animate([
             {opacity: 0.2},
             {opacity: 1}

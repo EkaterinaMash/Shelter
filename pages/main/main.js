@@ -7,17 +7,36 @@ fetch('https://raw.githubusercontent.com/EkaterinaMash/Shelter/gh-pages/pages/pe
         generateCards();
     })
 
+function generateCardsAmount() {
+    let width = document.documentElement.clientWidth;
 
-function generateCards() {
-    let petIndex;
-    let randomCards = new Set();
-    
     if (width >= desktopWidth) {
         cardsAmount = 3;
     } else if (width >= tabletWidth) {
         cardsAmount = 2;
     } else {
         cardsAmount = 1;
+    }
+}
+
+window.addEventListener('resize', changeCardsAmount);
+
+function generateCards() {
+    let petIndex;
+    let randomCards = new Set();
+    let petShow = document.querySelectorAll('.pet-card.show');
+
+    generateCardsAmount();
+    reduceCards(petShow, cardsAmount);
+
+    function fillCards() {
+        let cardsOnPage = Array.from(randomCards);
+        for (let i = 0; i < cardsAmount; i++) {
+            petImgs[i].setAttribute('src', cardsOnPage[i].picture);
+            petCards[i].setAttribute('id', cardsOnPage[i].id);
+            petCaptions[i].textContent = cardsOnPage[i].name;
+            petCards[i].classList.add('show');
+        }
     }
 
     function generateOnStartSlide() {
@@ -46,16 +65,6 @@ function generateCards() {
 
     document.querySelector('.right-button').onclick = generateOnNeighbourSlide;
     document.querySelector('.left-button').onclick = generateOnNeighbourSlide;
-
-    function fillCards() {
-        let cardsOnPage = Array.from(randomCards);
-        for (let i = 0; i < cardsAmount; i++) {
-            petImgs[i].setAttribute('src', cardsOnPage[i].picture);
-            petCards[i].setAttribute('id', cardsOnPage[i].id);
-            petCaptions[i].textContent = cardsOnPage[i].name;
-            petCards[i].classList.add('show');
-        }
-    }
 
     generateOnStartSlide();
 }

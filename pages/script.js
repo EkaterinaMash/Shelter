@@ -1,9 +1,10 @@
 let pets;
-let cardsAmount; 
+let cardsAmount;
 let body = document.querySelector('body');
 let petImgs = document.querySelectorAll('.pet-img');
 let petCaptions = document.querySelectorAll('.caption');
 let petCards = document.querySelectorAll('.pet-card');
+
 let petCardsContainer = document.querySelector('.pet-cards-container');
 let width = document.documentElement.clientWidth;
 let desktopWidth = 1280;
@@ -18,9 +19,29 @@ fetch('https://raw.githubusercontent.com/EkaterinaMash/Shelter/gh-pages/pages/pe
     })
     .then(data => {
         pets = data;
-        workWithMenuPopup(); 
-        openPetPopup();   
+        workWithMenuPopup();
+        openPetPopup();
     })
+
+function reduceCards(petShow, cardsAmount) {
+    for (let j = 0; j < petShow.length; j++) {
+
+        if (j >= cardsAmount) {
+            petShow[j].classList.remove('show');
+        }
+    }
+}
+
+function changeCardsAmount() {
+    let width = document.documentElement.clientWidth;
+
+    if ((desktopWidth - 10 < width && width < desktopWidth) || (
+        tabletWidth - 10 < width && width <= tabletWidth) || (
+        desktopWidth <= width && width < desktopWidth + 10)) {
+
+        generateCards();
+    }
+}
 
 function workWithMenuPopup() {
     let menuPopup = document.querySelector('.popup-menu');
@@ -59,6 +80,7 @@ function workWithMenuPopup() {
 
     function closePopup(e) {
         e.preventDefault();
+
         popupBurger.animate([
             {transform: 'rotate(90deg)'},
             {transform: 'rotate(0)'}
@@ -71,8 +93,9 @@ function workWithMenuPopup() {
             {transform: 'translate(320px)'}
         ], {
             duration: longAnimationDuration,
-            delay: shortAnimationDuration,  
+            delay: shortAnimationDuration,
         });
+
         setTimeout(toggleMenuClasses, (longAnimationDuration + shortAnimationDuration));
     }
 
@@ -89,15 +112,12 @@ function workWithMenuPopup() {
 }
 
 function openPetPopup() {
-
-    let listItemsAmount = 4; 
     let cardPopup = document.querySelector('.card-popup');
     let cardPopupBlocker = document.querySelector('.card-popup-blocker');
     let popupPetImg = document.querySelector('.popup-pet-img');
     let popupName = document.querySelector('.popup-name');
     let popupBreed = document.querySelector('.popup-breed');
     let popupDescription = document.querySelector('.popup-description');
-    let popupList = document.querySelector('.popup-list');
     let popupListItems = document.querySelectorAll('.popup-list-item');
     let popupCloseBtn = document.querySelector('.pet-popup-close');
 
@@ -111,10 +131,10 @@ function openPetPopup() {
                     popupName.textContent = pets[j].name;
                     popupBreed.textContent = pets[j].breed;
                     popupDescription.textContent = pets[j].description;
-                    popupListItems[0].textContent += pets[j].age;
-                    popupListItems[1].textContent += pets[j].inoculations;
-                    popupListItems[2].textContent += pets[j].diseases;
-                    popupListItems[3].textContent += pets[j].parasites;
+                    popupListItems[0].innerHTML = `<b>Age: </b> ${pets[j].age}`;
+                    popupListItems[1].innerHTML = `<b>Inoculations: </b> ${pets[j].inoculations}`; 
+                    popupListItems[2].innerHTML = `<b>Diseases: </b> ${pets[j].diseases}`;
+                    popupListItems[3].innerHTML = `<b>Parasites: </b> ${pets[j].parasites}`;
                 }
             }
         }
