@@ -1,4 +1,5 @@
-@import url(../assets/fonts/georgia/Georgia\ Regular\ font.ttf);
+@import url(../../assets/fonts/georgia/Georgia\ Regular\ font.ttf);
+@import url(../../assets/fonts/arial/arial.ttf);
 
 body.noscroll {
     overflow: hidden;
