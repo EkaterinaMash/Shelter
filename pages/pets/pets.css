@@ -1,4 +1,3 @@
-
 a.active {
     color: #292929;
 }
@@ -29,7 +28,6 @@ a {
 }
 
 .pets-container h3 {
-    width: 400px;
     text-align: center;
 }
 
@@ -52,15 +50,22 @@ a {
 
 
 @media (max-width: 720px) {
-.burger-menu span {
-    background-color: #000000;
-}
+    .burger-menu span {
+        background-color: #000000;
+    }
+
+    .pet-cards-container {
+        gap: 30px 30px;
+        padding: 0;
+    }
+
+    .pets-container {
+        padding: 42px 10px;
+        gap: 42px;
+    }
 }
 
 @media (max-width: 520px) {
-    .pets-container h3 {
-        font-size: 25px;
-    }
     .button-container {
         grid-gap: 10px;
     }

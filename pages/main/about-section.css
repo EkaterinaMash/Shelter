@@ -26,6 +26,10 @@
     .about-info {
         padding: 0;
     }
+
+    .about-info p {
+        text-align: justify;
+    }
 }
 
 @media (max-width: 740px) {

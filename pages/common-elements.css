@@ -1,7 +1,5 @@
 @import url(../assets/fonts/georgia/Georgia\ Regular\ font.ttf);
 
-/* на интерактивных объектах курсор должен быть пальцем! */
-
 body.noscroll {
     overflow: hidden;
 }
@@ -68,3 +66,8 @@ a.active {
     text-underline-offset: 5px;
 }
 
+@media (max-width: 740px) {
+    h3 {
+        font-size: 25px;
+    }
+}

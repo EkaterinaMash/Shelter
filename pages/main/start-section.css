@@ -54,7 +54,14 @@
     .start-dog {
         width: 569px;
         height: 593px;
-        margin-left: 15%;
+        margin-left: 10%;
+    }
+}
+
+@media (max-width: 740px) {
+    .start-dog {
+        width: 260px;
+        height: 271px;
     }
 }
 
@@ -62,11 +69,6 @@
 
     .start-content {
         gap: 105px;
-    }
-
-    .start-dog {
-        width: 260px;
-        height: 271px;
     }
 
     .start-info {

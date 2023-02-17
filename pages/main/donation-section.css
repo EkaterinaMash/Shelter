@@ -1,4 +1,3 @@
-
 .donation.container {
     box-sizing: border-box;
     background: #F6F6F6;
@@ -53,10 +52,14 @@
     .donation-content {
         gap: 60px;
     }
+
+    .donation-dog {
+        padding: 0;
+    }
 }
 
 @media (max-width: 740px) {
-     
+
     .bank-card {
         width: 281px;
     }
@@ -77,6 +80,10 @@
     .donation-info {
         justify-items: center;
         width: 300px;
+    }
+
+    .donation-info p {
+        text-align: justify;
     }
 }
 

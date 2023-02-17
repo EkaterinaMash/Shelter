@@ -28,7 +28,11 @@
     height: 100%;
     background-color: #292929;
     z-index: 2;
-    /*overflow: scroll;*/
+    overflow: auto;
+}
+
+.popup-menu.active::-webkit-scrollbar {
+    width: 0;
 }
 
 .popup-logo {

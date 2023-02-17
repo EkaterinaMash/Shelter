@@ -39,6 +39,7 @@
 @media (max-width: 740px) {
     .slider {
         grid-auto-flow: row;
+        gap: 20px;
     }
 }
 
@@ -46,4 +47,9 @@
     .pets-content {
         gap: 42px;
     }
+
+    .pets-content h3 {
+        line-height: 120%;
+    }
+
 }

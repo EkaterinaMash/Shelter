@@ -17,6 +17,7 @@ footer {
     display: grid;
     height: 234px;
     align-content: space-between;
+    justify-items: center;
 }
 
 .footer-contacts {
@@ -53,7 +54,7 @@ footer {
 }
 
 @media (max-width: 1100px) {
-    .footer {
+    footer {
         padding-top: 30px;
     }
 
@@ -67,9 +68,17 @@ footer {
         gap: 40px;
     }
 
-    .footer-contacts, .footer-location {
-        justify-items: center;
-        height: 215px;
+    .footer-contacts {
+        height: 208px;
+    }
+
+    .footer-location {
+        justify-items: start;
+        height: 222px;
+    }
+
+    .footer-contacts h3, .footer-location h3 {
+        text-align: center;
     }
 
     .footer-dog {

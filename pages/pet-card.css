@@ -25,10 +25,3 @@
     text-align: center;
     white-space: pre;
 }
-
-@media (max-width: 640px) {
-    .caption {
-        font-size: 15px;
-        line-height: 110%;
-    }
-}
