@@ -67,7 +67,10 @@ function workWithMenuPopup() {
         menuPopup.animate([
             {transform: 'translate(320px)'},
             {transform: 'translate(0)'}
-        ], longAnimationDuration);
+        ], {
+            duration: longAnimationDuration,
+            fill: "forwards"
+        });
         popupBurger.animate([
             {transform: 'rotate(0)'},
             {transform: 'rotate(90deg)'}
@@ -94,6 +97,7 @@ function workWithMenuPopup() {
         ], {
             duration: longAnimationDuration,
             delay: shortAnimationDuration,
+            fill: "forwards"
         });
 
         setTimeout(toggleMenuClasses, (longAnimationDuration + shortAnimationDuration));
