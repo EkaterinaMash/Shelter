@@ -21,6 +21,11 @@
     cursor: pointer;
 }
 
+.pet-card:hover button {
+    cursor: pointer;
+    background: #FDDCC4;
+}
+
 .caption {
     text-align: center;
     white-space: pre;

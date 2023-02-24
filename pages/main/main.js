@@ -52,7 +52,7 @@ function generateCards() {
             petIndex = Math.floor(Math.random() * pets.length);
             randomCards.add(pets[petIndex]);
         }
-        ;
+
         for (let pet of randomCards) {
             if (randomCards.size > cardsAmount) {
                 randomCards.delete(pet);

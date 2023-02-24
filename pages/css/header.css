@@ -55,6 +55,10 @@ header {
         height: 22px;
     }
 
+    .burger-menu:hover {
+        cursor: pointer;
+    }
+
     .burger-menu span {
         width: 30px;
         height: 2px;
