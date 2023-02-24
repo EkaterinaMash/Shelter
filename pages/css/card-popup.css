@@ -31,7 +31,6 @@
 }
 
 
-
 .card-popup-content {
     display: flex;
     gap: 29px;
@@ -123,5 +122,9 @@
 
     .popup-pet-img {
         display: none;
+    }
+
+    .pet-popup-close {
+        right: -31px;
     }
 }

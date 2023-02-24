@@ -17,7 +17,6 @@ footer {
     display: grid;
     height: 234px;
     align-content: space-between;
-    justify-items: center;
 }
 
 .footer-contacts {
@@ -68,17 +67,28 @@ footer {
         gap: 40px;
     }
 
+    .footer-contacts, .footer-location {
+        justify-items: center;
+    }
+
+    .address {
+        justify-self: start;
+    }
+
     .footer-contacts {
         height: 208px;
     }
 
     .footer-location {
-        justify-items: start;
         height: 222px;
     }
 
     .footer-contacts h3, .footer-location h3 {
         text-align: center;
+    }
+
+    .footer-location h3 {
+        width: 270px;
     }
 
     .footer-dog {

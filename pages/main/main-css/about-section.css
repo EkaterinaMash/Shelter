@@ -26,10 +26,6 @@
     .about-info {
         padding: 0;
     }
-
-    .about-info p {
-        text-align: justify;
-    }
 }
 
 @media (max-width: 740px) {
@@ -40,6 +36,10 @@
     .about-content img {
         width: 260px;
         height: 354px;
+    }
+
+    .about-info p {
+        text-align: justify;
     }
 }
 
