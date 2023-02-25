@@ -30,7 +30,6 @@
     left: calc(50% - var(--popup-width) / 2);
 }
 
-
 .card-popup-content {
     display: flex;
     gap: 29px;
@@ -58,7 +57,7 @@
     background: rgba(0, 0, 0, 0);
 }
 
-.pet-popup-close:hover {
+.card-popup-blocker:hover + .card-popup .pet-popup-close, .pet-popup-close:hover  {
     background-color: #F1CDB3;
     cursor: pointer;
 }
